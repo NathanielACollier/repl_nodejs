@@ -1,0 +1,11 @@
+{
+  "name": "repl_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "dependencies": {
+    "@types/node": "^10.12.12",
+    "ts-node": "8.3.0",
+    "typescript": "^3.2.1"
+  }
+}
