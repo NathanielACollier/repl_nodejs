@@ -14,6 +14,7 @@
         "request": "launch",
         "args": ["${relativeFile}"],
         "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+        "env": { "TS_NODE_PROJECT": "tsconfig_forTSNode.json" },
         "sourceMaps": true,
         "cwd": "${workspaceRoot}",
         "protocol": "inspector",
