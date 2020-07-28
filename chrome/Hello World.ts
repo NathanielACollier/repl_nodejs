@@ -7,7 +7,8 @@ async function main(){
     });
     
     let page = (await browser.pages())[0];
-    await page.waitForNavigation(); // wait for it to fail to load http://localhost/null
+    // wait for navigation causes a problem now that we are doing localhost/null
+    //await page.waitForNavigation(); // wait for it to fail to load http://localhost/null
     
     await page.setContent(`
         <div style='color:green;'>
