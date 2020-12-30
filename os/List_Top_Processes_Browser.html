@@ -1,0 +1,18 @@
+
+    <div id='displayDiv'>
+        {{title}}
+        <table style='width: 100%;'>
+            <thead>
+                <tr>
+                    <th>Process Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for='p in processes'>
+                    <td>{{p.Name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br /><button type='button' v-on:click='refreshProcesses'>Refresh</button>
+        <br /><button type='button' v-on:click='quit'>Quit</button>
+    </div>
