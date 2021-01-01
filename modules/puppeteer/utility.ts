@@ -9,6 +9,12 @@ export class App {
     }
 
     async initWithHtml(htmlText: string){
+
+        /*
+        The key to getting chrome to open in app mode, is to give it a real URL that doesn't really exist
+        Then immediately cause chrome to navigate to "about:blank"
+        */
+
         this.browser = await puppeteer.launch({
             headless: false,
             args: ['--app=http://localhost/null']
@@ -16,8 +22,8 @@ export class App {
 
         this.page = (await this.browser.pages())[0];
 
-        // wait for navigation causes a problem now that we are doing localhost/null
-        //await page.waitForNavigation(); // wait for it to fail to load http://localhost/null
+        await this.page.goto("about:blank"); 
+
 
         await this.page.setContent(htmlText);
 
