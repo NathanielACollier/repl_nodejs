@@ -8,6 +8,7 @@ let vm = new Vue({
     },
     methods: {
         refreshProcesses: () => {
+            console.log("Calling to get processes");
             sysCallGetTopProcesses().then((processes)=>{
                 console.log(processes);
                 vm.processes.splice(0, vm.processes.length);
